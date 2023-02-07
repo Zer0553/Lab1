@@ -5,13 +5,6 @@ num = ['1','2','3','4','5','6','7','8','9','0']
 lines = []
 numbers = []
 
-
-def number_to_words(n):
-    f = {0: 'ноль', 1: 'один', 2: 'два', 3: 'три', 4: 'четыре', 5: 'пять',
-    6: 'шесть', 7: 'семь', 8: 'восемь', 9: 'девять'}
-    return f.get(n)
-
-
 with open('NaL.txt') as f:
     file = f.read()
     for i in file.split():
@@ -41,8 +34,8 @@ for line in lines:
                 numbers.append(number)
 
 for i in numbers:
-    output = number_to_words(int(i[0]))
+    output = str(i) + ' - '
     for j in i:
         if int(j) % 2 == 0:
-            output += '-' + number_to_words(int(j))
+            output += j
     print(output)
