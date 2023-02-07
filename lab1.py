@@ -37,5 +37,5 @@ for i in numbers:
     output = str(i) + ' - '
     for j in i:
         if int(j) % 2 == 0:
-            output += j
+            output += j + ' '
     print(output)
