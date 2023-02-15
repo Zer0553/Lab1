@@ -14,8 +14,8 @@ def words(n):
 
 with open('NaL.txt') as f:
     file = f.read()
-    for i in file.split():
-        lines.append(i)
+    for line in file.split('\n'):
+        lines.append(line)
 
 for line in lines:
     h = 0
