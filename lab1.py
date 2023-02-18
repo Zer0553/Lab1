@@ -38,7 +38,7 @@ with open('test.txt', 'r') as f:
         work_buffer = ''
         buffer = f.read(buffer_len)
     if not numbers:
-        print('Нет подходящих цифр')
+        print('Нет подходящих чисел')
     else:
         print(numbers)
         for i in numbers:
