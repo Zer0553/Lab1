@@ -38,10 +38,15 @@ with open('test.txt', 'r') as f:
     else:
         print(numbers)
         for i in numbers:
-            p = i + ' - ' + words(int(i[0])) + ' '
+            p = i + ' - ' + words(int(i[0])) + ' -'
             answer = []
             for j in i:
                 if int(j) % 2 == 0:
                     if words(int(j)) not in answer:
                         answer.append(words(int(j)))
+                        answer.append('-')
+            try:
+                answer[len(answer) - 1] = ''
+            except IndexError:
+                continue
             print(p, *answer)
