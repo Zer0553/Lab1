@@ -25,16 +25,12 @@ with open('test.txt', 'r') as f:
         if len(work_buffer) > 0:
             if work_buffer[0] in start_num:
                 if work_buffer[0] in start_num:
-                    try:
-                        even = 0
-                        for j in work_buffer:
-                            if int(j) % 2 == 0:
-                                even += 1
-                        if even <= 2:
-                             numbers.append(work_buffer)
-                    except ValueError:
-                        work_buffer = ''
-                        buffer = f.read(buffer_len)
+                    even = 0
+                    for j in work_buffer:
+                        if int(j) % 2 == 0:
+                            even += 1
+                    if even <= 2:
+                        numbers.append(work_buffer)
         work_buffer = ''
         buffer = f.read(buffer_len)
     if not numbers:
@@ -42,10 +38,10 @@ with open('test.txt', 'r') as f:
     else:
         print(numbers)
         for i in numbers:
-            answer = i + ' - ' + words(int(i[0])) + ' '
+            p = i + ' - ' + words(int(i[0])) + ' '
+            answer = []
             for j in i:
                 if int(j) % 2 == 0:
-                    answer += words(int(j)) + ' '
-            print(answer)
-
-
+                    if words(int(j)) not in answer:
+                        answer.append(words(int(j)))
+            print(p, *answer)
